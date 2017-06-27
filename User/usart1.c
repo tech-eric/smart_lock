@@ -39,7 +39,7 @@ void USART1_Config(void)
 	GPIO_Init(GPIOA, &GPIO_InitStructure);    
 	/* Configure USART1 Rx (PA.10) as input floating */
 	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
 	GPIO_Init(GPIOA, &GPIO_InitStructure);
 	  
 	/* USART1 mode config */

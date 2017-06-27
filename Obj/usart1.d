@@ -5,12 +5,15 @@
 .\usart1.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\usart1.o: ..\System\system_stm32f10x.h
 .\usart1.o: ..\System\stm32f10x_conf.h
-.\usart1.o: ..\Driver\stm32f10x_dbgmcu.h
+.\usart1.o: ..\Driver\stm32f10x_bkp.h
 .\usart1.o: ..\System\stm32f10x.h
+.\usart1.o: ..\Driver\stm32f10x_dbgmcu.h
 .\usart1.o: ..\Driver\stm32f10x_exti.h
 .\usart1.o: ..\Driver\stm32f10x_gpio.h
 .\usart1.o: ..\Driver\stm32f10x_i2c.h
+.\usart1.o: ..\Driver\stm32f10x_pwr.h
 .\usart1.o: ..\Driver\stm32f10x_rcc.h
+.\usart1.o: ..\Driver\stm32f10x_rtc.h
 .\usart1.o: ..\Driver\stm32f10x_tim.h
 .\usart1.o: ..\Driver\stm32f10x_usart.h
 .\usart1.o: ..\Driver\misc.h

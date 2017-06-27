@@ -4,12 +4,15 @@
 .\busybox.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\busybox.o: ..\System\system_stm32f10x.h
 .\busybox.o: ..\System\stm32f10x_conf.h
-.\busybox.o: ..\Driver\stm32f10x_dbgmcu.h
+.\busybox.o: ..\Driver\stm32f10x_bkp.h
 .\busybox.o: ..\System\stm32f10x.h
+.\busybox.o: ..\Driver\stm32f10x_dbgmcu.h
 .\busybox.o: ..\Driver\stm32f10x_exti.h
 .\busybox.o: ..\Driver\stm32f10x_gpio.h
 .\busybox.o: ..\Driver\stm32f10x_i2c.h
+.\busybox.o: ..\Driver\stm32f10x_pwr.h
 .\busybox.o: ..\Driver\stm32f10x_rcc.h
+.\busybox.o: ..\Driver\stm32f10x_rtc.h
 .\busybox.o: ..\Driver\stm32f10x_tim.h
 .\busybox.o: ..\Driver\stm32f10x_usart.h
 .\busybox.o: ..\Driver\misc.h

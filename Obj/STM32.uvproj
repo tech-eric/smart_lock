@@ -442,6 +442,16 @@
               <FileType>1</FileType>
               <FilePath>..\User\nrf24l01.c</FilePath>
             </File>
+            <File>
+              <FileName>power.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\power.c</FilePath>
+            </File>
+            <File>
+              <FileName>rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\rtc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

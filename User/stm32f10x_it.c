@@ -25,6 +25,7 @@
 #include "stm32f10x_it.h"
 #include "stdio.h"
 #include "common.h"
+#include "nrf24l01.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Examples
   * @{
@@ -163,6 +164,50 @@ void SysTick_Handler(void)
   * @}
   */
 
+
+
+/****** RTC periodic wake up interrupt service routine*******/
+void RTCAlarm_IRQHandler(void)
+{
+	if (RTC_GetITStatus(RTC_IT_ALR) != RESET)
+	{
+		if(RTC_GetITStatus(RTC_IT_ALR) != RESET)
+		{
+			/* Clear EXTI line17 pending bit */
+			EXTI_ClearITPendingBit(EXTI_Line17);  // ?EXTI_Line17??? 
+			/* Check if the Wake-Up flag is set */
+			if(PWR_GetFlagStatus(PWR_FLAG_WU) != RESET)// ?????????? 
+			{
+				/* Clear Wake Up flag */
+				PWR_ClearFlag(PWR_FLAG_WU);
+			}
+    
+			/* Wait until last write operation on RTC registers has finished */
+			RTC_WaitForLastTask();   
+			/* Clear RTC Alarm interrupt pending bit */
+			RTC_ClearITPendingBit(RTC_IT_ALR);
+			/* Wait until last write operation on RTC registers has finished */
+			RTC_WaitForLastTask();
+			//printf("Hi, I am come back!\r\n");
+		}
+	}
+}
+/*
+*  PA0 interrupt used for NRF24L01 communation
+*
+*/
+void EXTI0_IRQHandler(void)
+{
+	if (EXTI_GetITStatus(EXTI_Line0) != RESET)
+	{
+		EXTI_ClearITPendingBit(EXTI_Line0);
+		nrf_rd_buf(RD_RX_PLOAD, (uint8_t *)buf_cmd, 32);
+		buf_cmd_status = CMD_RECEIVED;
+		nrf_clear_all();
+	}
+}
+
+
 /**
   * @}
   */
@@ -188,21 +233,25 @@ void  USART1_IRQHandler(void){
 					putchar(0x0d);
 					putchar('#');
 				  /* And '\0' to show that we reveiced a new cmd string */
-				  cmd_buf[buf_index] = '\0';
-				  cmd_status = CMD_RECEIVED;
-					buf_index = 0;
+				  buf_debug[buf_debug_index] = '\0';
+				  buf_debug_status = DEBUG_RECEIVED;
+					buf_debug_index = 0;
 					break;
 				case 0x7F:
 					/* If we received a backspace key, delet the last reveice data and move the buf_index back */
-					if(buf_index > 0) {
+					if(buf_debug_index > 0) {
 						putchar(RxData);
-						buf_index--;
+						buf_debug_index--;
 					}
 					break;
 				default: 
 					/* Stroe the received cmd string */
 					putchar(RxData);
-				  cmd_buf[buf_index++] = RxData;
+				  buf_debug[buf_debug_index++] = RxData;
+					if(buf_debug_index >= 32) {
+						buf_debug_index = 0;
+						buf_debug_status = DEBUG_RECEIVED;
+					}
 			}	
 	}
 }

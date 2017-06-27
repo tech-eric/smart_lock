@@ -1,8 +1,11 @@
 #include "common.h"
 #include "stm32f10x.h"
 #include "string.h"
+#include "stdio.h"
 
 #define SPACE 0x20
+
+int work_status = SLEEP;
 
 /* Find the next space character */
 static int next_space(char *str, int i)
@@ -66,6 +69,30 @@ void string_first(char *str, char *buf)
 	
 	start = next_char(str, 0);
 	stop = next_space(str, start);
-	memcpy(buf, str, stop - start);
+	if(stop == -1) {
+		memcpy(buf, str, strlen(str));
+		return;
+	}
+	else
+		memcpy(buf, str, stop - start);
 	buf[stop]= '\0';
+}
+
+
+
+int wakeup(char *str)
+{
+	work_status = WAKEUP;
+	
+	printf("\r\nWakeup!\r\n");
+	return 0;
+}
+
+int sleep(char *str)
+{
+	work_status = SLEEP;
+	
+	printf("\r\nSleep!\r\n");
+	
+	return 0;
 }

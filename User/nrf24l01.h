@@ -2,6 +2,8 @@
 #define __NRF24L01_H
 #define BYTE unsigned char  
 
+#include "stm32f10x.h" 
+
 #define TX_ADR_WIDTH    5   // 5  bytes TX(RX) address width
 
 #define TX_PLOAD_WIDTH  1  // 32 bytes TX payload
@@ -58,7 +60,15 @@
 
 extern void nrf_config(void);
 extern int nrf_send(char *str);
+extern void nrf_clear_all(void);
 extern int nrf(char *str);
+extern uint8_t nrf_rd_reg(u8 reg);
+extern uint8_t nrf_wr_reg(u8 reg, u8 dat);
+extern void power_off(void);
+extern void power_on(void);
+extern void ifnnrf_rx_mode(void);
+
+extern uint8_t nrf_rd_buf(uint8_t cmd, uint8_t *buf, uint8_t cnt);
 
 #endif
 

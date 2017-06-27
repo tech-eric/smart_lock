@@ -7,14 +7,20 @@
 #include "common.h"
 #include "rs485.h"
 #include "nrf24l01.h"
+#include "stm32f10x_pwr.h"
+#include "power.h"
+#include "rtc.h"
 #include "string.h"
 
 
 /* buf for common from uart */
-#define CMD_BUF_LEN 32
-char cmd_buf[CMD_BUF_LEN];
-char cmd_status = CMD_CLEAR;
-int  buf_index=0;
+#define CMD_BUF_LEN 20
+char buf_debug[CMD_BUF_LEN];
+char buf_cmd[CMD_BUF_LEN];
+char buf_debug_status = DEBUG_CLEAR;
+char buf_cmd_status = DEBUG_CLEAR;
+int  buf_debug_index = 0;
+int  buf_cmd_index = 0;
 
 
 void RCC_Configuration(void)  
@@ -50,7 +56,8 @@ void RCC_Configuration(void)
 
 int main(void)
 {
-		BYTE status;
+		int lock_status = OFF;
+		//int work_status = SLEEP;
 	
 	  RCC_Configuration();
 	
@@ -59,8 +66,11 @@ int main(void)
 	  lock_config();
 		rs485_config();
 		nrf_config();
-	
-		rs485();
+		power_config();
+		RTC_Config();
+		WKUP_NVIC_Config();
+
+		//rs485();
 		
 		//audio(ON);
 		//Delay(10000);
@@ -68,29 +78,49 @@ int main(void)
 		
 		printf("\r\n**WELCOM TO ENTER INTO BUSYBOX****\r\n");
 	
-		//nrf_send("Hello");
+		//nrf_clear_all();
+		//power_off();
+		//powerd_dcdc(OFF);
+		/*
+		//power_off();
+		printf("Goodbaby!\r\n");
+		Sleep(500);
+		power_on();
+		nrf_config();
+		nrf_clear_all();
+		buf_cmd_status = CMD_CLEAR;
+		*/
+
+		//power_on();
+
+		//buf_cmd_index = 0;
+		//Delay(100000);
+		//Delay(5000000);
 		while (1) {
 	
 				//printf("Hello World\r\n");
-				if(cmd_status == CMD_RECEIVED) {
-					cmd_status  = CMD_CLEAR;
-					//busy_box(cmd_buf);
-					if(strlen(cmd_buf) <= 2) 
-						continue;
-					while((nrf_send(cmd_buf)) == -1);
+				if(buf_debug_status == DEBUG_RECEIVED) {
+					busy_box(buf_debug);
+					buf_debug_status = DEBUG_CLEAR;
 				}
 				
-				//nrf_send("wakeup");
-				/*
-				while((nrf_send("wakeup now")) == -1);
-				Delay(1000);
-				while((nrf_send("lock on")) == -1);
-				Delay(1000);
-				while((nrf_send("lock off")) == -1);
-				Delay(1000);
-				while((nrf_send("sleep now")) == -1);
-				Delay(1000);
-				*/
-		}
-		
+				if(buf_cmd_status == CMD_RECEIVED) {	
+					buf_cmd_status = CMD_CLEAR;
+					DEBUG("%s\r\n", buf_cmd);
+					busy_box(buf_cmd);
+				}
+				
+				if(work_status == SLEEP) {
+					power_off();
+					//printf("Goodbaby!\r\n");
+					Sleep(1000);
+					//power_off();
+					//printf("Goodbaby!\r\n");
+					//Sleep(1000);
+					power_on();
+					//ifnnrf_rx_mode();
+					//nrf_clear_all();
+					Delay(10000);
+				}
+		 }
 }

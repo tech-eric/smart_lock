@@ -4,12 +4,15 @@
 .\mian.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\mian.o: ..\System\system_stm32f10x.h
 .\mian.o: ..\System\stm32f10x_conf.h
-.\mian.o: ..\Driver\stm32f10x_dbgmcu.h
+.\mian.o: ..\Driver\stm32f10x_bkp.h
 .\mian.o: ..\System\stm32f10x.h
+.\mian.o: ..\Driver\stm32f10x_dbgmcu.h
 .\mian.o: ..\Driver\stm32f10x_exti.h
 .\mian.o: ..\Driver\stm32f10x_gpio.h
 .\mian.o: ..\Driver\stm32f10x_i2c.h
+.\mian.o: ..\Driver\stm32f10x_pwr.h
 .\mian.o: ..\Driver\stm32f10x_rcc.h
+.\mian.o: ..\Driver\stm32f10x_rtc.h
 .\mian.o: ..\Driver\stm32f10x_tim.h
 .\mian.o: ..\Driver\stm32f10x_usart.h
 .\mian.o: ..\Driver\misc.h
@@ -22,4 +25,6 @@
 .\mian.o: ..\User\common.h
 .\mian.o: ..\User\rs485.h
 .\mian.o: ..\User\nrf24l01.h
+.\mian.o: ..\User\power.h
+.\mian.o: ..\User\rtc.h
 .\mian.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h

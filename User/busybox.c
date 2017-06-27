@@ -25,6 +25,8 @@ static struct cmd cmd_list[] = {
 	{"lock", &lock},
 	{"audio", &audio},
 	{"nrf", &nrf},
+	{"wakeup", &wakeup},
+	{"sleep", &sleep},
 };
 
 #define cmd_num sizeof(cmd_list)/sizeof(cmd_list[0])

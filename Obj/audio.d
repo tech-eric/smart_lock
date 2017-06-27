@@ -4,12 +4,15 @@
 .\audio.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\audio.o: ..\System\system_stm32f10x.h
 .\audio.o: ..\System\stm32f10x_conf.h
-.\audio.o: ..\Driver\stm32f10x_dbgmcu.h
+.\audio.o: ..\Driver\stm32f10x_bkp.h
 .\audio.o: ..\System\stm32f10x.h
+.\audio.o: ..\Driver\stm32f10x_dbgmcu.h
 .\audio.o: ..\Driver\stm32f10x_exti.h
 .\audio.o: ..\Driver\stm32f10x_gpio.h
 .\audio.o: ..\Driver\stm32f10x_i2c.h
+.\audio.o: ..\Driver\stm32f10x_pwr.h
 .\audio.o: ..\Driver\stm32f10x_rcc.h
+.\audio.o: ..\Driver\stm32f10x_rtc.h
 .\audio.o: ..\Driver\stm32f10x_tim.h
 .\audio.o: ..\Driver\stm32f10x_usart.h
 .\audio.o: ..\Driver\misc.h

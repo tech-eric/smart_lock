@@ -5,12 +5,15 @@
 .\lock.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
 .\lock.o: ..\System\system_stm32f10x.h
 .\lock.o: ..\System\stm32f10x_conf.h
-.\lock.o: ..\Driver\stm32f10x_dbgmcu.h
+.\lock.o: ..\Driver\stm32f10x_bkp.h
 .\lock.o: ..\System\stm32f10x.h
+.\lock.o: ..\Driver\stm32f10x_dbgmcu.h
 .\lock.o: ..\Driver\stm32f10x_exti.h
 .\lock.o: ..\Driver\stm32f10x_gpio.h
 .\lock.o: ..\Driver\stm32f10x_i2c.h
+.\lock.o: ..\Driver\stm32f10x_pwr.h
 .\lock.o: ..\Driver\stm32f10x_rcc.h
+.\lock.o: ..\Driver\stm32f10x_rtc.h
 .\lock.o: ..\Driver\stm32f10x_tim.h
 .\lock.o: ..\Driver\stm32f10x_usart.h
 .\lock.o: ..\Driver\misc.h
