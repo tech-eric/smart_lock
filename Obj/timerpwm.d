@@ -1,0 +1,16 @@
+timerpwm.o: ..\User\TimerPwm.c
+timerpwm.o: ..\User\TimerPwm.h
+timerpwm.o: ..\System\stm32f10x.h
+timerpwm.o: ..\System\core_cm3.h
+timerpwm.o: D:\Keil\ARM\RV31\Inc\stdint.h
+timerpwm.o: ..\System\system_stm32f10x.h
+timerpwm.o: ..\System\stm32f10x_conf.h
+timerpwm.o: ..\Driver\stm32f10x_dbgmcu.h
+timerpwm.o: ..\System\stm32f10x.h
+timerpwm.o: ..\Driver\stm32f10x_exti.h
+timerpwm.o: ..\Driver\stm32f10x_gpio.h
+timerpwm.o: ..\Driver\stm32f10x_i2c.h
+timerpwm.o: ..\Driver\stm32f10x_rcc.h
+timerpwm.o: ..\Driver\stm32f10x_tim.h
+timerpwm.o: ..\Driver\stm32f10x_usart.h
+timerpwm.o: ..\Driver\misc.h

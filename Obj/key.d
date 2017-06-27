@@ -1,0 +1,16 @@
+.\key.o: ..\User\key.c
+.\key.o: ..\System\stm32f10x.h
+.\key.o: ..\System\core_cm3.h
+.\key.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\key.o: ..\System\system_stm32f10x.h
+.\key.o: ..\System\stm32f10x_conf.h
+.\key.o: ..\Driver\stm32f10x_dbgmcu.h
+.\key.o: ..\System\stm32f10x.h
+.\key.o: ..\Driver\stm32f10x_exti.h
+.\key.o: ..\Driver\stm32f10x_gpio.h
+.\key.o: ..\Driver\stm32f10x_i2c.h
+.\key.o: ..\Driver\stm32f10x_rcc.h
+.\key.o: ..\Driver\stm32f10x_tim.h
+.\key.o: ..\Driver\stm32f10x_usart.h
+.\key.o: ..\Driver\misc.h
+.\key.o: ..\User\key.h

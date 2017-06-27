@@ -1,0 +1,16 @@
+.\rs485.o: ..\User\RS485.c
+.\rs485.o: ..\User\common.h
+.\rs485.o: ..\System\stm32f10x.h
+.\rs485.o: ..\System\core_cm3.h
+.\rs485.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\rs485.o: ..\System\system_stm32f10x.h
+.\rs485.o: ..\System\stm32f10x_conf.h
+.\rs485.o: ..\Driver\stm32f10x_dbgmcu.h
+.\rs485.o: ..\System\stm32f10x.h
+.\rs485.o: ..\Driver\stm32f10x_exti.h
+.\rs485.o: ..\Driver\stm32f10x_gpio.h
+.\rs485.o: ..\Driver\stm32f10x_i2c.h
+.\rs485.o: ..\Driver\stm32f10x_rcc.h
+.\rs485.o: ..\Driver\stm32f10x_tim.h
+.\rs485.o: ..\Driver\stm32f10x_usart.h
+.\rs485.o: ..\Driver\misc.h

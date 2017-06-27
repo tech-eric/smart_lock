@@ -1,0 +1,17 @@
+#include "stm32f10x.h"
+
+struct cmd {
+	char *name[10];
+	int (*func)(int val, ...);
+};
+
+struct cmd cmd_list[] = {
+	"lock",lock
+
+};
+
+int busy_box(char *string)
+{
+	
+	return 0;
+}

@@ -1,0 +1,17 @@
+.\common.o: ..\User\common.c
+.\common.o: ..\User\common.h
+.\common.o: ..\System\stm32f10x.h
+.\common.o: ..\System\core_cm3.h
+.\common.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\common.o: ..\System\system_stm32f10x.h
+.\common.o: ..\System\stm32f10x_conf.h
+.\common.o: ..\Driver\stm32f10x_dbgmcu.h
+.\common.o: ..\System\stm32f10x.h
+.\common.o: ..\Driver\stm32f10x_exti.h
+.\common.o: ..\Driver\stm32f10x_gpio.h
+.\common.o: ..\Driver\stm32f10x_i2c.h
+.\common.o: ..\Driver\stm32f10x_rcc.h
+.\common.o: ..\Driver\stm32f10x_tim.h
+.\common.o: ..\Driver\stm32f10x_usart.h
+.\common.o: ..\Driver\misc.h
+.\common.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h

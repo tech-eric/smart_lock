@@ -1,0 +1,16 @@
+.\led_test.o: ..\User\led_test.c
+.\led_test.o: ..\User\led_test.h
+.\led_test.o: ..\System\stm32f10x.h
+.\led_test.o: ..\System\core_cm3.h
+.\led_test.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\led_test.o: ..\System\system_stm32f10x.h
+.\led_test.o: ..\System\stm32f10x_conf.h
+.\led_test.o: ..\Driver\stm32f10x_dbgmcu.h
+.\led_test.o: ..\System\stm32f10x.h
+.\led_test.o: ..\Driver\stm32f10x_exti.h
+.\led_test.o: ..\Driver\stm32f10x_gpio.h
+.\led_test.o: ..\Driver\stm32f10x_i2c.h
+.\led_test.o: ..\Driver\stm32f10x_rcc.h
+.\led_test.o: ..\Driver\stm32f10x_tim.h
+.\led_test.o: ..\Driver\stm32f10x_usart.h
+.\led_test.o: ..\Driver\misc.h

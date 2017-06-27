@@ -1,0 +1,15 @@
+.\system_stm32f10x.o: ..\System\system_stm32f10x.c
+.\system_stm32f10x.o: ..\System\stm32f10x.h
+.\system_stm32f10x.o: ..\System\core_cm3.h
+.\system_stm32f10x.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\system_stm32f10x.o: ..\System\system_stm32f10x.h
+.\system_stm32f10x.o: ..\System\stm32f10x_conf.h
+.\system_stm32f10x.o: ..\Driver\stm32f10x_dbgmcu.h
+.\system_stm32f10x.o: ..\System\stm32f10x.h
+.\system_stm32f10x.o: ..\Driver\stm32f10x_exti.h
+.\system_stm32f10x.o: ..\Driver\stm32f10x_gpio.h
+.\system_stm32f10x.o: ..\Driver\stm32f10x_i2c.h
+.\system_stm32f10x.o: ..\Driver\stm32f10x_rcc.h
+.\system_stm32f10x.o: ..\Driver\stm32f10x_tim.h
+.\system_stm32f10x.o: ..\Driver\stm32f10x_usart.h
+.\system_stm32f10x.o: ..\Driver\misc.h
